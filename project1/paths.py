@@ -7,5 +7,10 @@ TEST = Path(r"C:\Users\34644\Desktop\Firts Semester\Vision and learning\Test")
 
 CAR_IMAGES_DIR = Path(r'C:\Users\34644\Desktop\Firts Semester\Vision and learning\archive (4)\images') 
 
+DATASET = Path(r"C:\Users\34644\Desktop\Firts Semester\Vision and learning\archive (5)")
+
+
 FRONTAL = TEST / 'Frontal'
 LATERAL = TEST / 'Lateral'
+
+DATASET_IMG = DATASET / "images"
