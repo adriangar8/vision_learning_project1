@@ -1,4 +1,4 @@
-# vision_learning
+# Vision and Learning
 
 In essence, "Automatic Number-Plate Recognition" (ANPR) systems are used to automatically detect and recognize number plates in images. From there, the identified license plate can be used to look up information about the car's owner. ANPR systems are mainly used for car park access control although the main use of ANPR is to fine drivers for traffic offences.
 
