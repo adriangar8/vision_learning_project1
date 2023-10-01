@@ -1,12 +1,26 @@
-import torch
-from torchvision import datasets, transforms
+import random
+import os
 
-def get_dataloader(dataset_path):
-    voc_dataset = datasets.VOCDetection(root=dataset_path, image_set='train', download=False)
+# Generate the list of image IDs
+number_files = len(os.listdir(r'C:\Users\xavim\Desktop\Uni\3er\1\Vision\License_plates\Dataset\VOCdevkit\VOC2012\ImageSets')) - 1
+image_ids = [f"Cars{i}" for i in range(number_files)]  # Assuming the images range from Cars0.png to Cars429.png
 
-    transform = transforms.Compose([transforms.Resize((224, 224)),
-                                    transforms.ToTensor()])
+# Shuffle the list
+random.shuffle(image_ids)
 
-    dataloader = torch.utils.data.DataLoader(voc_dataset, batch_size=32, shuffle=True, transform = transform)
-    
-    return dataloader
+# Calculate the number of images to use for training (80%)
+num_train = int(0.8 * len(image_ids))
+
+# Split into training and validation sets
+train_ids = image_ids[:num_train]
+val_ids = image_ids[num_train:]
+
+# Write to train.txt
+with open(r'C:\Users\xavim\Desktop\Uni\3er\1\Vision\License_plates\Dataset\VOCdevkit\VOC2012\ImageSets\Main\train.txt', "w") as f:
+    for id in train_ids:
+        f.write(f"{id}\n")
+
+# Write to val.txt
+with open(r'C:\Users\xavim\Desktop\Uni\3er\1\Vision\License_plates\Dataset\VOCdevkit\VOC2012\ImageSets\Main\val.txt', "w") as f:
+    for id in val_ids:
+        f.write(f"{id}\n")
