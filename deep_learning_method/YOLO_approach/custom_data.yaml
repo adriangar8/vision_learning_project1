@@ -7,9 +7,9 @@
 #     └── coco128  ← downloads here (7 MB)
 
 # path: 
-train: ../train_data/images/train/ 
-val: ../train_data/images/val/ 
-# test:  # test images (optional)
+train: ../yolo_data/images/train/ 
+val: ../yolo_data/images/val/ 
+test:  ../yolo_data/images/test/
 
 nc: 1
 
